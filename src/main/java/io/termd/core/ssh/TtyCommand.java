@@ -225,7 +225,7 @@ public class TtyCommand implements AsyncCommand, ChannelDataReceiver, ChannelSes
     return null;
   }
 
-  private class Connection implements TtyConnection {
+  private class Connection implements SSHTtyConnection {
 
     @Override
     public Charset inputCharset() {
@@ -331,6 +331,11 @@ public class TtyCommand implements AsyncCommand, ChannelDataReceiver, ChannelSes
         TtyCommand.this.close(exit);
       } catch (IOException ignore) {
       }
+    }
+
+    @Override
+    public ChannelSession getSession() {
+      return session;
     }
   }
 }
