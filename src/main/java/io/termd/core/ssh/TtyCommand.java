@@ -337,5 +337,9 @@ public class TtyCommand implements AsyncCommand, ChannelDataReceiver, ChannelSes
     public ChannelSession getSession() {
       return session;
     }
+    @Override
+    public String getUsername() {
+      return session.getSession().getUsername();
+    }
   }
 }

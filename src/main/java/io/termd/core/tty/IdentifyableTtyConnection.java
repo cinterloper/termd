@@ -15,12 +15,9 @@
  */
 //Author: Grant Haywood
 
-package io.termd.core.ssh;
-
-import io.termd.core.tty.IdentifyableTtyConnection;
-import org.apache.sshd.server.channel.ChannelSession;
+package io.termd.core.tty;
 
 
-public interface SSHTtyConnection extends IdentifyableTtyConnection {
-    ChannelSession getSession();
+public interface IdentifyableTtyConnection extends TtyConnection {
+    String getUsername();
 }
